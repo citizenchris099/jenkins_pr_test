@@ -1,5 +1,6 @@
  #!groovy
 
- node { // <1>
+ Jenkinsfile (Pipeline Script)
+ node {
      echo 'Hello World' // <2>
  }
