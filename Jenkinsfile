@@ -2,5 +2,6 @@
 
  Jenkinsfile (Pipeline Script)
  node {
-     echo 'Hello World' // <2>
+     checkout scm // <1>
+     /* .. snip .. */
  }
