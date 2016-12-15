@@ -1,4 +1,3 @@
- Jenkinsfile (Pipeline Script)
  node {
      stage('Build') {
               checkout scm // <1>
