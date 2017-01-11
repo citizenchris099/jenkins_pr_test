@@ -21,7 +21,7 @@ def superCoolFunction(exit){
 }
 
 node {
-    stage('THINGA') {
+    stage('Build') {
         superCoolFunction("1")
         echo "RESULT: ${currentBuild.result}"
         }
