@@ -5,7 +5,7 @@ def superCoolFunction(){
     for (i = 0; i <3; i++) {
         if (currentBuild.result == 'FAILURE') {
              try {
-                    if(job<25){
+                    if(${job}<25){
                     echo "made it to if <25"
                     currentBuild.result = 'SUCCESS'
                     }else{
