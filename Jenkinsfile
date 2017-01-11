@@ -15,7 +15,7 @@ def superCoolFunction(){
                 }
          }
     }
-    currentBuld.result = (success) ? 'SUCCESS' : 'FAILURE'
+    currentBuild.result = (success) ? 'SUCCESS' : 'FAILURE'
     echo "superCoolFunction result: ${currentBuild.result}"
 }
 
