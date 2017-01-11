@@ -6,7 +6,7 @@ def superCoolFunction(){
         echo "in loop result: ${currentBuild.result}"
         if (!success) {
              try {
-                    sh "exit 0"
+                    echo "try"
                     success = true
                     break
                 }
