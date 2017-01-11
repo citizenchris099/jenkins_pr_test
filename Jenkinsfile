@@ -21,7 +21,7 @@ def superCoolFunction(exit){
 }
 
 node {
-    superCoolFunction("0")
+    superCoolFunction("1")
     echo "RESULT: ${currentBuild.result}"
 }
 
