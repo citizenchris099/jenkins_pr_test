@@ -20,6 +20,23 @@ def superCoolFunction(){
 
 node {
     currentBuild.result = 'FAILURE'
-    superCoolFunction()
+
+    for (i = 0; i <3; i++) {
+        echo "in loop result: ${currentBuild.result}"
+        if (currentBuild.result == 'FAILURE') {
+             try {
+                    echo "try"
+                    currentBuild.result = 'SUCCESS'
+                    echo "in loop result: ${currentBuild.result}"
+                    break
+                }
+             catch (Exception err) {
+                    echo "catch"
+                    currentBuild.result = 'FAILURE'
+                }
+         }
+    }
+
+//    superCoolFunction()
     echo "RESULT: ${currentBuild.result}"
 }
