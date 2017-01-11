@@ -20,6 +20,7 @@ def superCoolFunction(){
 
 node {
 
+        currentBuild.result = 'START'
     try {
         // do something that fails
         sh "exit 0"
@@ -30,7 +31,7 @@ node {
     echo "RESULT: ${currentBuild.result}"
 
 /*
-    currentBuild.result = 'FAILURE'
+//    currentBuild.result = 'FAILURE'
 
     for (i = 0; i <3; i++) {
         echo "in loop result: ${currentBuild.result}"
