@@ -1,20 +1,23 @@
-def job = env.BUILD_NUMBER as Integer
+def result = 'bad'
 
 def superCoolFunction(){
     for (i = 0; i <3; i++) {
-        if (currentBuild.result == 'FAILURE') {
+        if (${result} == 'bad') {
              try {
                     echo "try"
-                    currentBuild.result = 'SUCCESS'
+                    return ${result} = 'good'
                 } catch (Exception err) {
                     echo "catch"
-                    currentBuild.result = 'FAILURE'
+                    return ${result} = 'bad'
                 }
          }
     }
 }
 node {
-    currentBuild.result = 'FAILURE'
-    superCoolFunction()
+    if(superCoolFunction() == 'good'){
+        currentBuild.result = 'SUCCESS'
+    }else{
+        currentBuild.result = 'FAILURE'
+    }
     echo "RESULT: ${currentBuild.result}"
 }
