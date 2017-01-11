@@ -7,7 +7,7 @@ def superCoolFunction(){
         if (!success) {
              try {
                     echo "try"
-                    sh "exit 1"
+                    sh "exit 0"
                     success = true
                     break
                 }
