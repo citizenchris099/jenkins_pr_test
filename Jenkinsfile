@@ -5,14 +5,11 @@ def superCoolFunction(){
     for (i = 0; i <3; i++) {
         if (currentBuild.result == 'FAILURE') {
              try {
-                    if(${job}<25){
-                    echo "made it to if <25"
+                    echo "try"
+                    sh "exit 1"
                     currentBuild.result = 'SUCCESS'
-                    }else{
-                    echo "made it to else"
-                     sh "exit 1"
-                    }
                 } catch (Exception err) {
+                    echo "catch"
                      currentBuild.result = 'FAILURE'
                 }
          }
