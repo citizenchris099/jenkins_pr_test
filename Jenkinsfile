@@ -6,11 +6,9 @@ def superCoolFunction(){
          }
     }
 }
-
-
 node {
-    currentBuild.result == 'FAILURE'
     try {
+        currentBuild.result == 'FAILURE'
         superCoolFunction()
     } catch (Exception err) {
          currentBuild.result = 'FAILURE'
