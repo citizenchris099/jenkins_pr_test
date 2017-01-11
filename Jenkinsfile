@@ -1,6 +1,6 @@
 def job = env.BUILD_NUMBER as Integer
 
-def superCoolFunction(success,exit){
+def superCoolFunction(exit){
     def success = false;
     for (i = 0; i <3; i++) {
         echo "in loop result: ${currentBuild.result}"
