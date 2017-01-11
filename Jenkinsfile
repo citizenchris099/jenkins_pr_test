@@ -1,4 +1,5 @@
 def superCoolFunction(){
+    currentBuild.result = 'FAILURE'
     for (i = 0; i <3; i++) {
         if (currentBuild.result == 'FAILURE') {
             echo "count = : ${i}"
@@ -6,9 +7,10 @@ def superCoolFunction(){
          }
     }
 }
+
+
 node {
     try {
-        currentBuild.result == 'FAILURE'
         superCoolFunction()
     } catch (Exception err) {
          currentBuild.result = 'FAILURE'
