@@ -5,10 +5,10 @@ def superCoolFunction(){
         if (${result} == 'bad') {
              try {
                     echo "try"
-                    return ${result} = 'good'
+                    return result = 'good'
                 } catch (Exception err) {
                     echo "catch"
-                    return ${result} = 'bad'
+                    return result = 'bad'
                 }
          }
     }
