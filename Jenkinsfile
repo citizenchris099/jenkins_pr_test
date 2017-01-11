@@ -7,7 +7,7 @@ node {
          try {
                 sh "exit 0"
                 currentBuild.result = 'SUCCESS'
-            } catch (Exception err) {
+            } catch (Exception err2) {
                 currentBuild.result = 'FAILURE'
             }
     }
