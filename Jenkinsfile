@@ -1,19 +1,24 @@
+def job = env.BUILD_NUMBER as Integer
+
 def superCoolFunction(){
     currentBuild.result = 'FAILURE'
     for (i = 0; i <3; i++) {
         if (currentBuild.result == 'FAILURE') {
-            echo "count = : ${i}"
-            echo "RESULT: ${currentBuild.result}"
+             try {
+                    if(job<25){
+                    echo "made it to if <25"
+                    currentBuild.result = 'SUCCESS'
+                    }else{
+                    echo "made it to else"
+                     sh "exit 1"
+                    }
+                } catch (Exception err) {
+                     currentBuild.result = 'FAILURE'
+                }
          }
     }
 }
-
-
 node {
-    try {
-        superCoolFunction()
-    } catch (Exception err) {
-         currentBuild.result = 'FAILURE'
-    }
+    superCoolFunction()
     echo "RESULT: ${currentBuild.result}"
 }
