@@ -19,6 +19,17 @@ def superCoolFunction(){
 }
 
 node {
+
+    try {
+        // do something that fails
+        sh "exit 1"
+        currentBuild.result = 'SUCCESS'
+    } catch (Exception err) {
+        currentBuild.result = 'FAILURE'
+    }
+    echo "RESULT: ${currentBuild.result}"
+
+/*
     currentBuild.result = 'FAILURE'
 
     for (i = 0; i <3; i++) {
@@ -39,4 +50,7 @@ node {
 
 //    superCoolFunction()
     echo "RESULT: ${currentBuild.result}"
+    */
 }
+
+
