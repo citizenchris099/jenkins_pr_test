@@ -3,7 +3,7 @@ def job = env.BUILD_NUMBER as Integer
 def superCoolFunction(){
     currentBuild.result = 'FAILURE'
     for (i = 0; i <3; i++) {
-        if (currentBuild.result == 'FAILURE') {
+        if (currentBuild.result == 'SUCCESS') {
              try {
                     echo "try"
                     sh "exit 1"
