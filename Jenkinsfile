@@ -1,15 +1,19 @@
+def superCoolFunction(){
+    currentBuild.result == 'FAILURE'
+    for (i = 0; i <3; i++) {
+        if (currentBuild.result == 'FAILURE') {
+            echo "count = : ${i}"
+            echo "RESULT: ${currentBuild.result}"
+         }
+    }
+}
+
+
 node {
     try {
-        // do something that fails
-        sh "exit 1"
-        currentBuild.result = 'SUCCESS'
+        superCoolFunction()
     } catch (Exception err) {
-         try {
-                sh "exit 0"
-                currentBuild.result = 'SUCCESS'
-            } catch (Exception err2) {
-                currentBuild.result = 'FAILURE'
-            }
+         currentBuild.result = 'FAILURE'
     }
     echo "RESULT: ${currentBuild.result}"
 }
