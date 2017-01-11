@@ -2,7 +2,7 @@ def result = 'bad'
 
 def superCoolFunction(){
     for (i = 0; i <3; i++) {
-        if (${result} == 'bad') {
+        if (result == 'bad') {
              try {
                     echo "try"
                     return result = 'good'
