@@ -1,13 +1,13 @@
 def job = env.BUILD_NUMBER as Integer
 
-def superCoolFunction(){
+def superCoolFunction(exit){
     def success = false;
     for (i = 0; i <3; i++) {
         echo "in loop result: ${currentBuild.result}"
         if (!success) {
              try {
                     echo "try"
-                    sh "exit 0"
+                    sh "exit "+exit
                     success = true
                     break
                 }
@@ -21,7 +21,7 @@ def superCoolFunction(){
 }
 
 node {
-    superCoolFunction()
+    superCoolFunction("0")
     echo "RESULT: ${currentBuild.result}"
 }
 
