@@ -20,7 +20,7 @@ def superCoolFunction(success,exit){
 
 node {
     def success = false;
-    def results = superCoolFunction(success,"1")
+    def results = superCoolFunction(success,"0")
     currentBuild.result = (results) ? 'SUCCESS' : 'FAILURE'
     echo "RESULT: ${currentBuild.result}"
 }
