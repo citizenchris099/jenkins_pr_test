@@ -4,7 +4,12 @@ node {
         sh "exit 1"
         currentBuild.result = 'SUCCESS'
     } catch (Exception err) {
-        currentBuild.result = 'FAILURE'
+         try {
+                sh "exit 0"
+                currentBuild.result = 'SUCCESS'
+            } catch (Exception err) {
+                currentBuild.result = 'FAILURE'
+            }
     }
     echo "RESULT: ${currentBuild.result}"
 }
