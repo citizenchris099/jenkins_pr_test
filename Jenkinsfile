@@ -20,7 +20,7 @@ def superCoolFunction(){
 
 node {
 
-        currentBuild.result = 'START'
+        currentBuild.result = 'SUCCESS'
     try {
         // do something that fails
         sh "exit 0"
