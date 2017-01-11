@@ -1,7 +1,6 @@
 def job = env.BUILD_NUMBER as Integer
 
 def superCoolFunction(){
-    currentBuild.result = 'FAILURE'
     for (i = 0; i <3; i++) {
         if (currentBuild.result == 'FAILURE') {
              try {
@@ -15,6 +14,7 @@ def superCoolFunction(){
     }
 }
 node {
+    currentBuild.result = 'FAILURE'
     superCoolFunction()
     echo "RESULT: ${currentBuild.result}"
 }
