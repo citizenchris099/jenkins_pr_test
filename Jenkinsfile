@@ -16,13 +16,15 @@ def superCoolFunction(exit){
                 }
          }
     }
-    currentBuild.result = (success) ? 'SUCCESS' : 'FAILURE'
-    echo "superCoolFunction result: ${currentBuild.result}"
+    return success
 }
 
 node {
-    superCoolFunction("0")
+    def result = false
+    result = superCoolFunction("0")
     echo "RESULT: ${currentBuild.result}"
+    currentBuild.result = (result) ? 'SUCCESS' : 'FAILURE'
+    echo "superCoolFunction result: ${currentBuild.result}"
 }
 
 
