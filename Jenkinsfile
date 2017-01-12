@@ -22,6 +22,10 @@ def superCoolFunction(exit){
 node {
     def result = false
     result = superCoolFunction("0")
+    if(result == true){
+    echo "made it to if"
+    result = superCoolFunction("1")
+    }
     echo "RESULT: ${currentBuild.result}"
     currentBuild.result = (result) ? 'SUCCESS' : 'FAILURE'
     echo "superCoolFunction result: ${currentBuild.result}"
