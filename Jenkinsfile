@@ -21,7 +21,7 @@ def superCoolFunction(exit){
 
 node {
     def result = false
-    result = superCoolFunction("0")
+    result = superCoolFunction("1")
     if(result == true){
     echo "made it to if"
     result = superCoolFunction("1")
